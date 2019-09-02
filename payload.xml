@@ -10,6 +10,6 @@
         <payload name="8">from HL_Engine import HLEngine_dmlLite</payload>
         <payload name="9">from HL_Engine import HLEngine_sR</payload>
         <payload name="10">from HL_Engine import HLEngine_audioProcess</payload>
-        <payload name="11">from HL_Engine import HLEngine_Weather</payload>
+        <payload name="11">from HL_Engine import HLEngine_weather</payload>
     </shelf>
 </HL_Engine>
