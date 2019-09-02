@@ -2,7 +2,10 @@
 #HLRobotics-Automation
 import cv2
 import pyzbar.pyzbar as pyzbar
+#from qrtools import QR
 cap = cv2.VideoCapture(0)
+import os
+
 
 
 def qrTech():
@@ -32,3 +35,20 @@ def qrTech():
         cv2.destroyAllWindows()
     except:
         return ("HLEngine:Error in executing qrTech.....")
+
+"""
+def qrGen(param):
+
+    content = str(param)
+    return("HLEngine:getting string")
+    my_QR = QR(data=content, pixel_size=10)
+    my_QR.encode()
+    return ("HLEngine:encoding")
+
+    my_QR.filename
+    return ("HLEngineprocessing please wait.....")
+        # os.system("sudo mv " + my_QR.filename + " ~/Desktop")
+    return ("HLEngine:done")
+
+"""
+
