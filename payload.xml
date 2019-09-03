@@ -11,5 +11,6 @@
         <payload name="9">from HL_Engine import HLEngine_sR</payload>
         <payload name="10">from HL_Engine import HLEngine_audioProcess</payload>
         <payload name="11">from HL_Engine import HLEngine_weather</payload>
+        <payload name="12">from HL_Engine import HLEngine_com_protocols</payload>
     </shelf>
 </HL_Engine>
