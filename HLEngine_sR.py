@@ -17,3 +17,16 @@ def sR():
 
     except sr.RequestError as e:
         return ("HLEngine:Could not request results from Google Speech Recognition service; {0}".format(e))
+
+
+def sentiment(param):
+    import nltk
+    # import TextBlob
+    from textblob import TextBlob
+    blob1 = TextBlob(param)
+    return (blob1.sentiment.polarity)
+
+
+
+
+

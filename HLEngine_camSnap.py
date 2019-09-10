@@ -66,4 +66,52 @@ def filter(filter,cam,frameName):
 
 
 
+def videoObjectDetection(cascade,video_source,frameName,objectName):
+    try:
+        cap = cv2.VideoCapture(video_source)
 
+        # Create the haar cascade
+        faceCascade = cv2.CascadeClassifier(cascade)
+        framer=frameName
+        font = cv2.FONT_HERSHEY_PLAIN
+        while (True):
+
+            # Capture frame-by-frame
+            ret, frame = cap.read()
+
+            # Our operations on the frame come here
+            gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
+            # Detect faces in the image
+            net = faceCascade.detectMultiScale(
+                gray,
+                scaleFactor=1.1,
+                minNeighbors=5,
+                minSize=(30, 30)
+                # flags = cv2.CV_HAAR_SCALE_IMAGEHL_Engine/HLEngine_camSnap.py:40
+            )
+
+            #print(format(len(net)))
+            # print (len(faces))
+            if (len(net) >= 1):
+                #return ("found 2 eyes")
+                cv2.putText(frame, str(objectName), (50, 50), font, 2,
+                            (0, 0, 255), 3)
+
+
+
+            # Draw a rectangle around the faces
+            for (x, y, w, h) in net:
+                cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
+
+            # Display the resulting frame
+            cv2.imshow(framer, frame)
+            if cv2.waitKey(1) & 0xFF == ord('x'):
+                break
+
+
+        # When everything done, release the capture
+        cap.release()
+        cv2.destroyAllWindows()
+    except:
+        return ("HLEngine: An issue with video_source or params")
