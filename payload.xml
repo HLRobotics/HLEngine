@@ -4,7 +4,7 @@
         <payload name="2">from HL_Engine import HLEngine_dict</payload>
         <payload name="3">#from HL_Engine import HLEngine_dml</payload>
         <payload name="4">from HL_Engine import HLEngine_qrTech</payload>
-        <payload name="5">from HL_Engine import HLEngine_updates</payload>
+        <payload name="5">from HL_Engine import HLEngine_updateConsoleVersion</payload>
         <payload name="6">from HL_Engine import HLEngine_wiki</payload>
         <payload name="7">from HL_Engine import HLEngine_wordX</payload>
         <payload name="8">from HL_Engine import HLEngine_dmlLite</payload>
