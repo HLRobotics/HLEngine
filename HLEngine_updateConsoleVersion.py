@@ -18,4 +18,3 @@ def update():
     except:
         return("HLEngine:cannot connect to cloud")
 
-update()

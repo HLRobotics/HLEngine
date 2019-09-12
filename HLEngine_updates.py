@@ -8,6 +8,7 @@
 
 from PyQt4 import QtCore, QtGui
 import git
+import cv2
 
 try:
     _fromUtf8 = QtCore.QString.fromUtf8
@@ -58,6 +59,10 @@ class HL_Updates(object):
             self.progressBar.setProperty("value", 75)
             self.progressBar.setProperty("value", 100)
             print("HLEngine:done updating ......")
+            img = cv2.imread('HLEngine.png')
+            cv2.imshow('HLEngine updates', img)
+            cv2.waitKey(0)
+            cv2.destroyAllWindows()
 
         except:
             return ("HLEngine:cannot connect to cloud")
