@@ -1,13 +1,15 @@
 #@author:Akhil P Jacob
 #HLRobotics-Automation
 import cv2
-def camSnap(location):
+from PIL import Image
+import numpy
+def camSnap(location,frameName,cam):
     try:
-        camera = cv2.VideoCapture(0)
+        camera = cv2.VideoCapture(cam)
         while True:
             return_value, image = camera.read()
             gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-            cv2.imshow('HLEngine_camSnap', gray)
+            cv2.imshow(frameName, gray)
             if cv2.waitKey(1) & 0xFF == ord('x'):
                 cv2.imwrite(location, gray)
                 break
@@ -16,7 +18,19 @@ def camSnap(location):
     except:
         return ("HLEngine:Camera not connected")
 
-def filter(filter,cam,frameName):
+
+def showImage(location,frameName):
+    img = cv2.imread(location)
+    cv2.imshow(frameName, img)
+    cv2.waitKey(0)
+    cv2.destroyAllWindows()
+
+
+
+
+
+
+def liveCam_filter(filter,cam,frameName):
     try:
         cap = cv2.VideoCapture(cam)
 
@@ -115,3 +129,27 @@ def videoObjectDetection(cascade,video_source,frameName,objectName):
         cv2.destroyAllWindows()
     except:
         return ("HLEngine: An issue with video_source or params")
+
+
+
+def overlay(dress_png,person_png,finalName_png):
+    try:
+        img = Image.open(dress_png)
+
+        #print(img.size)
+
+        background = Image.open(person_png)
+
+        #print(background.size)
+
+        # resize the image
+        size = (2000,2000)
+        background = background.resize(size,Image.ANTIALIAS)
+
+        background.paste(img, (-350, -950), img)
+        background.save(finalName_png,"PNG")
+        return ('done')
+
+    except:
+        return('HLEngine:An issue with the camera or params passed')
+
