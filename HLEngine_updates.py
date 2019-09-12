@@ -55,10 +55,10 @@ class HL_Updates(object):
             git_dir = "../HL_Engine"
             self.progressBar.setProperty("value", 50)
             g = git.cmd.Git(git_dir)
-            g.pull()
             self.progressBar.setProperty("value", 75)
+            g.pull()
             self.progressBar.setProperty("value", 100)
-            print("HLEngine:done updating ......")
+            print("HLEngine:Updated HLEngine......OK")
             img = cv2.imread('HLEngine.png')
             cv2.imshow('HLEngine updates', img)
             cv2.waitKey(0)
