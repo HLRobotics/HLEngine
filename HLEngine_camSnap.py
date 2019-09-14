@@ -2,6 +2,7 @@
 #HLRobotics-Automation
 import cv2
 from PIL import Image
+import face_recognition
 import numpy
 def camSnap(location,frameName,cam):
     try:
@@ -152,4 +153,31 @@ def overlay(dress_png,person_png,finalName_png):
 
     except:
         return('HLEngine:An issue with the camera or params passed')
+
+
+
+def faceIdentification(location_of_face):
+    video = cv2.VideoCapture(0)
+
+    deep_image = face_recognition.load_image_file(location_of_face)
+    deep_face_encoding = face_recognition.face_encodings(deep_image)
+    print("System Start working!")
+
+    while True:
+        rit, frame = video.read()
+        small_frame = cv2.resize(frame, (0, 0), fx=1, fy=1)
+        rgb_small_frame = small_frame[:, :, :: -1]
+        face_locations = face_recognition.face_locations(rgb_small_frame, )
+        face_encodings = face_recognition.face_encodings(rgb_small_frame, face_locations)
+        for face_encoding in face_encodings:
+            matches = face_recognition.compare_faces(deep_face_encoding, face_encoding)
+            if True in matches:
+                return('detected')
+
+
+            else:
+                print("Waiting for master!")
+
+    video.release()
+    cv2.destroyAllWindows()
 
