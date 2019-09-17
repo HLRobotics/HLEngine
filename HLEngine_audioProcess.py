@@ -28,9 +28,14 @@ def playAudio(location):
         return ("HLEngine:playAudio issue detected")
 
 def readText(param):
-    engine = pyttsx3.init()
-    engine.say(param)
-    engine.runAndWait()
+    try:
+        engine = pyttsx3.init()
+        engine.getProperty('rate')
+        engine.setProperty('rate', 125)
+        engine.say(param)
+        engine.runAndWait()
+    except:
+        return ("HLEngine cannot load the required necessay files")
 
 
 
