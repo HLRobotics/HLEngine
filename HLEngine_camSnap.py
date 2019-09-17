@@ -2,7 +2,7 @@
 #HLRobotics-Automation
 import cv2
 from PIL import Image
-import face_recognition
+#import face_recognition
 import numpy
 def camSnap(location,frameName,cam):
     try:
@@ -58,7 +58,7 @@ def liveCam_filter(filter,cam,frameName):
             #print(format(len(net)))
             # print (len(faces))
             if (len(net) >= 2):
-                return ("found 2 eyes")
+                return (True)
 
 
 
@@ -156,7 +156,7 @@ def overlay(dress_png,person_png,finalName_png):
 
 
 
-def faceIdentification(location_of_face):
+'''def faceIdentification(location_of_face):
     video = cv2.VideoCapture(0)
 
     deep_image = face_recognition.load_image_file(location_of_face)
@@ -179,5 +179,5 @@ def faceIdentification(location_of_face):
                 print("Waiting for master!")
 
     video.release()
-    cv2.destroyAllWindows()
+    cv2.destroyAllWindows()'''
 

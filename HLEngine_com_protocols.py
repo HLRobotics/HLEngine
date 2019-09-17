@@ -1,5 +1,6 @@
 import serial
 import smtplib
+import os
 
 def serSend(port,rate,data):
     try:
@@ -29,6 +30,14 @@ def sendMail(mailid,psd,to,msg):
         return ("HLEngine :mail_sent")
     except:
         return ("HLEngine :failed to send mail")
+
+def shutDown_windows():
+    os.system("shutdown /s /t 1")
+
+def reboot_windows():
+    os.system("restart /s /t 1")
+
+
 
 
 
