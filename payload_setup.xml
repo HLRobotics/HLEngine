@@ -1,0 +1,26 @@
+<HL_Engine>
+    <shelf>
+        <payload name="1">pyserial</payload>
+        <payload name="2">pygame</payload>
+        <payload name="3">opencv-python</payload>
+        <payload name="4">pyttsx3</payload>
+        <payload name="5">PyAudio</payload>
+        <payload name="6">playsound</payload>
+        <payload name="7">gTTS</payload>
+        <payload name="8">Pillow==2.2.1</payload>
+        <payload name="9">numpy</payload>
+        <payload name="10">secure-smtplib</payload>
+        <payload name="11">PyDictionary</payload>
+        <payload name="12">MySQL-python</payload>
+        <payload name="13">pyzbar</payload>
+        <payload name="14">SpeechRecognition</payload>
+        <payload name="15">nltk</payload>
+        <payload name="16">textblob</payload>
+        <payload name="17">python-git</payload>
+        <payload name="18">subprocess.run</payload>
+        <payload name="19">wikipedia</payload>
+        <payload name="20">pybase64</payload>
+        <payload name="21">pytesseract</payload>
+        <payload name="22">pyowm</payload>
+    </shelf>
+</HL_Engine>

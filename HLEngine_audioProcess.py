@@ -4,7 +4,15 @@
 from gtts import gTTS
 import pygame
 import pyttsx3
+from playsound import playsound
 
+
+
+def soundPlayer(location):
+    try:
+        playsound(location)
+    except:
+        return ("HLEngine:an issue in playing sound detected")
 
 
 def saveAudio(param,location):

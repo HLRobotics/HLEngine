@@ -1,0 +1,20 @@
+<HL_Engine>
+    <shelf>
+        <payload name="1">from HL_Engine import HLEngine_audioProcess</payload>
+        <payload name="2">from HL_Engine import HLEngine_camSnap</payload>
+        <payload name="3">#from HL_Engine import HLEngine_communications</payload>
+        <payload name="4">from HL_Engine import HLEnine_dict</payload>
+        <payload name="5">from HL_Engine import HLEngine_dmlLite</payload>
+        <payload name="6">from HL_Engine import HLEngine_dml</payload>
+        <payload name="7">from HL_Engine import HLEngine_PredatorVision</payload>
+        <payload name="8">from HL_Engine import HLEngine_qrTech</payload>
+        <payload name="9">from HL_Engine import HLEngine_sR</payload>
+        <payload name="10">from HL_Engine import HLEngine_system</payload>
+        <payload name="11">from HL_Engine import HLEngine_updateConsoleVersion</payload>
+        <payload name="12">from HL_Engine import HLEngine_updates</payload>
+        <payload name="13">from HL_Engine import HLEngine_weather</payload>
+        <payload name="14">from HL_Engine import HLEngine_wiki</payload>
+        <payload name="15">from HL_Engine import HLEngine_wordX</payload>
+
+    </shelf>
+</HL_Engine>
