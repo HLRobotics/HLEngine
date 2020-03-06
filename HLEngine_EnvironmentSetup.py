@@ -28,3 +28,15 @@ def setup_libraries_linuxVersion():
             subprocess.check_call([sys.executable, "-m", "pip3", "install", package])
         except:
             print("HLEngine: Installation failed....")
+
+
+try:
+    setup_libraries_linuxVersion()
+except:
+    print("HLEngine: failed to commence. Checking alternative...")
+
+try:
+    setup_libraries()
+except:
+    print("HLEngine: failed to commence. Please install manually")
+
