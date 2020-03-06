@@ -2,6 +2,7 @@
 #HLEngine Environmental settings
 import subprocess
 import sys
+import time
 def setup_libraries():
     from xml.dom import minidom
     mydoc = minidom.parse('payload_setup.xml')
@@ -36,6 +37,8 @@ except:
     print("HLEngine: failed to commence. Checking alternative...")'''
 
 try:
+    print("HLEngine Environmental setup console initializing.....")
+    time.sleep(2)
     setup_libraries()
 except:
     print("HLEngine: failed to commence. Please install manually")
