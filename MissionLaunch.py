@@ -54,7 +54,7 @@ class Ui_Dialog(object):
     def launchMission(self):
         path=self.lineEdit.text()
         from xml.dom import minidom
-        mydoc = minidom.parse('payload.xml')
+        mydoc = minidom.parse('payload_header.xml')
         payload = mydoc.getElementsByTagName('payload')
         file = open(path, "a")
         for elem in payload:
