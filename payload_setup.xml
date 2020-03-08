@@ -7,11 +7,11 @@
         <payload name="5">PyAudio</payload>
         <payload name="6">playsound</payload>
         <payload name="7">gTTS</payload>
-        <payload name="8">Pillow==2.2.1</payload>
+        <payload name="8">Pillow</payload>
         <payload name="9">numpy</payload>
         <payload name="10">secure-smtplib</payload>
         <payload name="11">PyDictionary</payload>
-        <payload name="12">MySQL-python</payload>
+        <payload name="12">mysql</payload>
         <payload name="13">pyzbar</payload>
         <payload name="14">SpeechRecognition</payload>
         <payload name="15">nltk</payload>
@@ -22,5 +22,6 @@
         <payload name="20">pybase64</payload>
         <payload name="21">pytesseract</payload>
         <payload name="22">pyowm</payload>
+        <payload name="23">pip install opencv-contrib-python</payload>
     </shelf>
 </HL_Engine>
