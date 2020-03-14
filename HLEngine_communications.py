@@ -149,14 +149,14 @@ def find_Port():
     try:
         ser = serial.Serial("/dev/ttyUSB0", rate)
         print("Connected to /dev/ttyUSB0")
-        return('serial.Serial("/dev/ttyUSB0", 9600)')
+        return('/dev/ttyUSB0)
     except:
         print("Disconnected to /dev/ttyUSB0")
 
     try:
         ser = serial.Serial("/dev/ttyACM0", rate)
         print("Connected to /dev/ttyACM0")
-        return('serial.Serial("/dev/ttyACM0", 9600)')
+        return('/dev/ttyACM0')
     except:
         print("Disconnected to /dev/ttyACM0")
 
