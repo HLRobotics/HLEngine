@@ -31,12 +31,7 @@ def install_package_windows(package):
         print("HLEngine: Installation failed....")
 
 
-def install_package_linux(package):
-    try:
-        print("HLEngine : Commencing installation......")
-        subprocess.check_call([sys.executable, "-m", "pip3", "install", package])
-    except:
-        print("HLEngine: Installation failed....")
+
 
 
             

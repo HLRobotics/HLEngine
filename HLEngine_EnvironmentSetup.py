@@ -6,7 +6,10 @@ import time
 def setup_libraries():
     from xml.dom import minidom
     mydoc = minidom.parse('payload_setup.xml')
-    payload = mydoc.getElementsByTagName('payload')        
+    payload = mydoc.getElementsByTagName('payload')    
+    xfile=open("log.txt","w")
+    xfile.write("")
+    xfile.close()    
     for elem in payload:
         print(elem.firstChild.data)
         package = str(elem.firstChild.data)
@@ -15,31 +18,23 @@ def setup_libraries():
             subprocess.check_call([sys.executable, "-m", "pip", "install", package])
         except:
             print("HLEngine: Installation failed....")
+            xfile=open("log.txt","a")
+            xfile.write(package)
+            xfile.close()
 
-
-def setup_libraries_linuxVersion():
-    from xml.dom import minidom
-    mydoc = minidom.parse('payload_setup.xml')
-    payload = mydoc.getElementsByTagName('payload')        
-    for elem in payload:
-        print(elem.firstChild.data)
-        package = str(elem.firstChild.data)
-        try:
-            print("HLEngine : Commencing installation......")
-            subprocess.check_call([sys.executable, "-m", "pip3", "install", package])
-        except:
-            print("HLEngine: Installation failed....")
-
-'''
-try:
-    setup_libraries_linuxVersion()
-except:
-    print("HLEngine: failed to commence. Checking alternative...")'''
 
 try:
-    print("HLEngine Environmental setup console initializing.....")
+    print("Welcome to HL_ENGINE Development Platform 2020 - Robot Development Simplified")
+    time.sleep(1)
+    print("\nDesigned and Developed by: Er.Akhil P Jacob (last updated on 16th March 2020)")
+    time.sleep(1)
+    print("\nThe Setup will take time depending on the internet speed and the system performance")
+    print("\nPlease wait.......")
+    time.sleep(1)
+    print("\nHLEngine Robot Developmental Environment setup console initializing.....")
     time.sleep(2)
     setup_libraries()
 except:
+    
     print("HLEngine: failed to commence. Please install manually")
 
