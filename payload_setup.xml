@@ -26,5 +26,6 @@
         <payload name="24">pipwin</payload>
         <payload name="25">pandas</payload>
         <payload name="26">google-search</payload>
+        <payload name="27">google</payload>
     </shelf>
 </HL_Engine>
