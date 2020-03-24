@@ -24,16 +24,18 @@ def setup_libraries():
 
 
 try:
-    print("Welcome to HL_ENGINE Development Platform 2020 - Robot Development Simplified")
+    print("\nWelcome to HL_ENGINE Development Platform 2020 - Robot Development Simplified")
     time.sleep(1)
-    print("\nDesigned and Developed by: Er.Akhil P Jacob (last updated on 16th March 2020)")
+    print("\nDesigned and Developed by: Er.Akhil P Jacob (last updated on 24th March 2020)")
     time.sleep(1)
-    print("\nThe Setup will take time depending on the internet speed and the system performance")
-    print("\nPlease wait.......")
-    time.sleep(1)
-    print("\nHLEngine Robot Developmental Environment setup console initializing.....")
-    time.sleep(2)
-    setup_libraries()
+    print("\nThe Setup will take time depending on the internet speed and the system performance.")
+    print("\nIt is recommended to close all other applications including Editors or IDE's on installation")
+    dec=str("shall we proceed ? y/n........")
+    if(dec=="y" or dec=="Y"):
+        time.sleep(1)
+        print("\nHLEngine Robot Developmental Environment setup console initializing.....")
+        time.sleep(2)
+        setup_libraries()
 except:
     
     print("HLEngine: failed to commence. Please install manually")
