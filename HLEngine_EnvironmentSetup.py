@@ -7,7 +7,7 @@ def setup_libraries():
     from xml.dom import minidom
     mydoc = minidom.parse('payload_setup.xml')
     payload = mydoc.getElementsByTagName('payload')    
-    xfile=open("log.txt","w")
+    xfile=open("HL_Logs/log.txt","w")
     xfile.write("")
     xfile.close()    
     for elem in payload:
