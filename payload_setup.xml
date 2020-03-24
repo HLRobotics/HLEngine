@@ -27,7 +27,9 @@
         <payload name="25">pandas</payload>
         <payload name="26">google-search</payload>
         <payload name="27">google</payload>
-        <payload name="27">multitasking</payload>
+        <payload name="28">multitasking</payload>
+        <payload name="29">flask</payload>
+        <payload name="30">chatterbot</payload>
 
     </shelf>
 </HL_Engine>
