@@ -30,12 +30,12 @@ try:
     time.sleep(1)
     print("\nThe Setup will take time depending on the internet speed and the system performance.")
     print("\nIt is recommended to close all other applications including Editors or IDE's on installation")
-    dec=str("shall we proceed ? y/n........")
-    if(dec=="y" or dec=="Y"):
-        time.sleep(1)
-        print("\nHLEngine Robot Developmental Environment setup console initializing.....")
-        time.sleep(2)
-        setup_libraries()
+    print("\n processing..........")
+    
+    time.sleep(5)
+    print("\nHLEngine Robot Developmental Environment setup console initializing.....")
+    time.sleep(2)
+    setup_libraries()
 except:
     
     print("HLEngine: failed to commence. Please install manually")
