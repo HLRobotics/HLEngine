@@ -67,7 +67,7 @@ def liveCam_filter(filter,cam,frameName):
                 cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 255, 0), 2)
 
             # Display the resulting frame
-            #cv2.imshow(framer, frame)
+            cv2.imshow(framer, frame)
             if cv2.waitKey(1) & 0xFF == ord('x'):
                 break
 
