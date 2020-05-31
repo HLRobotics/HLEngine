@@ -4,8 +4,8 @@
 echo "Hyper Library Dynamic Integration Technology";
 
 echo "HLEngine updates 2020";
-gnome-terminal -e './launcher.sh &'
 
+gif-for-cli "HL_Flags/updating_HLEngine.gif"
 
 set -e
 
