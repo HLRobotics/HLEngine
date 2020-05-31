@@ -1,5 +1,5 @@
-#@author:Akhil P Jacob
-#HLRobotics-Automation
+#author:Akhil P Jacob
+#HLDynamic-Integrations
 import pyowm
 def temp(place):
     owm = pyowm.OWM('f8c43bbd601d39c177afabec2d050d04')

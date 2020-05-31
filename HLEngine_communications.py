@@ -1,8 +1,12 @@
+#author:Akhil P Jacob
+#HLDynamic-Integrations
 import serial
 import smtplib
 import os
 rate=9600
 import time
+import bluetooth
+
 def find_Port():
     try:
         ser = serial.Serial("COM1", rate)
@@ -193,10 +197,69 @@ def sendMail(mailid,psd,to,msg):
         return ("HLEngine :failed to send mail")
 
 def shutDown_windows():
-    os.system("shutdown /s /t 1")
+    try:
+        os.system("shutdown /s /t 1")
+    except:
+        return ("HLEngine :failed to shutdown windows")
+
 
 def reboot_windows():
-    os.system("restart /s /t 1")
+    try:
+        os.system("restart /s /t 1")
+    except:
+        return ("HLEngine :failed to reboot windows")
+
+def linux_shutdown():
+    try:
+        os.system("poweroff")
+    except:
+        return ("HLEngine :failed to shutdown linux")
+
+def linux_boot():
+    try:
+        os.system("reboot")
+    except:
+        return ("HLEngine :failed to reboot linux")
+
+def spy():
+    try:
+        os.system("sudo motion")
+    except:
+        return ("HLEngine :failed to configure motion")
+def stop_spy():
+    try:
+        os.system("sudo service motion stop")
+    except:
+        return ("HLEngine :failed to shutdown windows")
+
+def ifconfig():
+    try:
+        os.system("ifconfig")
+    except:
+        return ("HLEngine :sorry ,cmd error")
+
+
+
+
+
+def botAccess(bot_address):
+    try:
+        bd_addr=bot_address
+        port = 1
+        sock = bluetooth.BluetoothSocket (bluetooth.RFCOMM)
+        sock.connect((bd_addr,port))
+        print("Connection to BT device [established]")
+        while 1:
+            tosend = input('Enter your wireless command here:  ')
+            if (tosend != 'exit'):
+                sock.send(tosend)
+                #return("data_send")
+            elif (tosend=='exit'):
+                break
+    except:
+        print("HLEngine: Connection to BT device [interrupted]")
+
+
 
 
 

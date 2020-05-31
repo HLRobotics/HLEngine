@@ -1,5 +1,5 @@
-#@author:Akhil P Jacob
-#HLRobotics-Automation
+#author:Akhil P Jacob
+#HLDynamic-Integrations
 import cv2
 import pyzbar.pyzbar as pyzbar
 #from qrtools import QR

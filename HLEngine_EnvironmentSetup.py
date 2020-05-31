@@ -1,5 +1,5 @@
-#@author:Er.Akhil P Jacob
-#HLEngine Environmental settings
+#author:Akhil P Jacob
+#HLDynamic-Integrations
 import subprocess
 import sys
 import time
@@ -14,7 +14,7 @@ def setup_libraries():
         print(elem.firstChild.data)
         package = str(elem.firstChild.data)
         try:
-            print("HLEngine : Commencing installation......")
+            print("HLEngine : Processing......")
             subprocess.check_call([sys.executable, "-m", "pip", "install", package])
         except:
             print("HLEngine: Installation failed....")

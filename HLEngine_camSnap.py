@@ -1,5 +1,5 @@
-#@author:Akhil P Jacob
-#HLRobotics-Automation
+#author:Akhil P Jacob
+#HLDynamic-Integrations
 import cv2
 from PIL import Image
 #import face_recognition

@@ -1,3 +1,5 @@
+#author:Akhil P Jacob
+#HLDynamic-Integrations
 import os
 import cv2
 import numpy as np
@@ -49,12 +51,12 @@ def trainDataSet():
     cv2.destroyAllWindows()
 
 
-def lockTarget(filterName,ip,user1,user2,user3,user4,user5):
+def lockTarget_IP(filterName,ip,user1,user2,user3,user4,user5):
     faceDetect = cv2.CascadeClassifier(filterName)
     #camera="http://192.168.1.202:8080/video"
     cam = cv2.VideoCapture(ip)
     rec = cv2.face.LBPHFaceRecognizer_create();
-    rec.read('recognizer\\trainingdata.yml')
+    rec.read('recognizer/trainingdata.yml')
     # id=0
     # font=cv2.cv.InitFont(cv2.cv.CV_FONT_HERSHEY_COMPLEX_SMALL,5,1,0,4)
     font = cv2.FONT_HERSHEY_SIMPLEX
@@ -89,7 +91,7 @@ def lockTarget(filterName,ip,user1,user2,user3,user4,user5):
 
 
 
-def lockTarget(filterName,camera,user1,user2,user3,user4,user5):
+def lockTarget_Camera(filterName,camera,user1,user2,user3,user4,user5):
     faceDetect = cv2.CascadeClassifier(filterName)    
     cam = cv2.VideoCapture(camera)
     rec = cv2.face.LBPHFaceRecognizer_create();

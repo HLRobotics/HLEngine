@@ -1,7 +1,7 @@
 <HL_Engine>
     <shelf>
         <payload name="1">pyserial</payload>
-        <payload name="2">pygame</payload>
+        <payload name="2">PyMata</payload>
         <payload name="3">opencv-python</payload>
         <payload name="4">pyttsx3</payload>
         <payload name="5">pyqt5</payload>
@@ -29,7 +29,10 @@
         <payload name="27">google</payload>
         <payload name="28">multitasking</payload>
         <payload name="29">flask</payload>
-        <payload name="30">scikit-learn</payload>
+        <payload name="30">gif-for-cli</payload>
+        <payload name="31">scikit-learn</payload>
+
+        
 
     </shelf>
 </HL_Engine>

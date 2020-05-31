@@ -1,5 +1,5 @@
-#@author:Akhil P Jacob
-#HLRobotics-Automation
+#author:Akhil P Jacob
+#HLDynamic-Integrations
 from PyDictionary import PyDictionary
 
 def dict(param):
