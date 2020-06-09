@@ -4,6 +4,9 @@ import cv2
 from PIL import Image
 #import face_recognition
 import numpy
+from vidgear.gears.stabilizer import Stabilizer
+
+
 def camSnap(location,frameName,cam):
     try:
         camera = cv2.VideoCapture(cam)
@@ -77,6 +80,55 @@ def liveCam_filter(filter,cam,frameName):
         cv2.destroyAllWindows()
     except:
         return ("HLEngine: An issue with camera or params")
+
+
+
+
+def stabilization_cam(cam):
+    stream = cv2.VideoCapture(cam) 
+
+    #initiate stabilizer object with default parameters
+    stab = Stabilizer()
+
+    # loop over
+    while True:
+
+        # read frames from stream
+        (grabbed, frame) = stream.read()
+
+        # check for frame if not grabbed
+        if not grabbed:
+            break
+
+        # send current frame to stabilizer for processing
+        stabilized_frame = stab.stabilize(frame)
+        
+        # wait for stabilizer which still be initializing
+        if stabilized_frame is None:
+            continue 
+
+
+        # {do something with the frame here}
+        
+
+        # Show output window
+        cv2.imshow("Stabilized Frame", stabilized_frame)
+
+        # check for 'q' key if pressed
+        key = cv2.waitKey(1) & 0xFF
+        if key == ord("x"):
+            break
+
+    
+    
+
+    #clear stabilizer resources
+    stab.clean()
+
+    # safely close video stream
+    stream.release()
+
+    
 
 
 
