@@ -5,6 +5,7 @@ from PIL import Image
 #import face_recognition
 import numpy
 from vidgear.gears.stabilizer import Stabilizer
+from vidgear.gears import WriteGear
 
 
 def camSnap(location,frameName,cam):
@@ -127,6 +128,65 @@ def stabilization_cam(cam):
 
     # safely close video stream
     stream.release()
+
+
+
+
+def stream_stabilization(video_path,video_saving_path):
+    # Open suitable video stream
+    stream = cv2.VideoCapture(video_path) 
+
+    #initiate stabilizer object with default parameters
+    stab = Stabilizer()
+
+    # Define writer with default parameters and suitable output filename for e.g. `Output.mp4`
+    writer = WriteGear(output_filename = video_saving_path) 
+
+    # loop over
+    while True:
+
+        # read frames from stream
+        (grabbed, frame) = stream.read()
+
+        # check for frame if not grabbed
+        if not grabbed:
+            break
+
+        # send current frame to stabilizer for processing
+        stabilized_frame = stab.stabilize(frame)
+        
+        # wait for stabilizer which still be initializing
+        if stabilized_frame is None:
+            print("HLEngine: no stabilization needed")
+            continue 
+
+
+        # {do something with the frame here}
+
+
+        # write stabilized frame to writer
+        writer.write(stabilized_frame)
+        
+        # Show output window
+        cv2.imshow("Stabilized Frame", stabilized_frame)
+
+        # check for 'q' key if pressed
+        key = cv2.waitKey(1) & 0xFF
+        if key == ord("q"):
+            break
+
+    # close output window
+    cv2.destroyAllWindows()
+
+    #clear stabilizer resources
+    stab.clean()
+
+    # safely close video stream
+    stream.release()
+
+    # safely close writer
+    writer.close()
+
 
     
 
