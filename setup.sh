@@ -25,6 +25,10 @@ sudo apt-get install python3-pygame
 wait
 sudo apt-get install python3-bluez
 wait
+sudo apt-get install qttools5-dev-tools
+wait
+sudo apt-get install qttools5-dev
+wait
 python3 HLEngine_EnvironmentSetup.py &
 wait
 gif-for-cli "HL_Flags/updating_HLEngine.gif"
