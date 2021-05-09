@@ -241,7 +241,7 @@ def ifconfig():
 
 
 
-
+#BT devices only
 def botAccess(bot_address):
     try:
         bd_addr=bot_address
