@@ -1,7 +1,7 @@
 import string
 
 def dataEncryption(data):
-    keyLoader=open('HL_Crypto/key.txt','r')
+    keyLoader=open('HL_Engine\HL_Crypto\key.txt','r')
     key=keyLoader.read()
     dataModel=[]
     ASCER=(string.printable)
